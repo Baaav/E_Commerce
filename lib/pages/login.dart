@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ecommerce/pages/register.dart';
 import 'package:ecommerce/shared/colors.dart';
 import 'package:ecommerce/shared/constant.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,12 @@ class login extends StatelessWidget {
                   Text("Do not Have An Account?",
                       style: TextStyle(fontSize: 20)),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Register()));
+                      },
                       child: Text('sign up',
                           style: TextStyle(color: Colors.black)))
                 ])
