@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ecommerce/shared/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 class login extends StatelessWidget {
@@ -16,40 +17,18 @@ class login extends StatelessWidget {
               const SizedBox(
                 height: 64,
               ),
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                obscureText: false,
-                decoration: InputDecoration(
-                  hintText: "Enter Your Email : ",
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: Divider.createBorderSide(context),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  //fillColor: Colors.red ,
-                  filled: true,
-                  contentPadding: const EdgeInsets.all(8),
-                ),
+              mytextfield(
+                TextInputTypevar: TextInputType.emailAddress,
+                ispassword: false,
+                hinttext: "Enter Your Email : ",
               ),
               const SizedBox(
                 height: 33,
               ),
-              TextField(
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: "Enter Your Password : ",
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: Divider.createBorderSide(context),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  //fillColor: Colors.red ,
-                  filled: true,
-                  contentPadding: const EdgeInsets.all(8),
-                ),
+              mytextfield(
+                TextInputTypevar: TextInputType.text,
+                ispassword: true,
+                hinttext: "Enter Your Password : ",
               )
             ],
           ),
