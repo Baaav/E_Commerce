@@ -1,17 +1,23 @@
-class Item {
-  String imgPath;
-  double price;
+// ignore_for_file: unnecessary_string_escapes
 
-  Item({required this.imgPath, required this.price});
+class Itm {
+  String imagePath;
+  double price;
+  String locate;
+
+  Itm(
+      {required this.imagePath,
+      required this.price,
+      this.locate = "main branch"});
 }
 
-final List<Item> items = [
-  Item(price: 12.99, imgPath: "assets\images\1.jpg"),
-  Item(price: 12.99, imgPath: "assets\images\2.jpg"),
-  Item(price: 12.99, imgPath: "assets\images\3.jpg"),
-  Item(price: 12.99, imgPath: "assets\images\4.jpg"),
-  Item(price: 12.99, imgPath: "assets\images\5.jpg"),
-  Item(price: 12.99, imgPath: "assets\images\6.jpg"),
-  Item(price: 12.99, imgPath: "assets\images\7.jpg"),
-  Item(price: 12.99, imgPath: "assets\images\8.jpg"),
+final List<Itm> items = [
+  Itm(price: 13.00, imagePath: "assets\images\1.jpg", locate: "bavly shoes"),
+  Itm(price: 13.00, imagePath: "assets\images\2.jpg"),
+  Itm(price: 13.00, imagePath: "assets\images\3.jpg"),
+  Itm(price: 13.00, imagePath: "assets\images\4.jpg"),
+  Itm(price: 13.00, imagePath: "assets\images\5.jpg"),
+  Itm(price: 13.00, imagePath: "assets\images\6.jpg"),
+  Itm(price: 13.00, imagePath: "assets\images\7.jpg"),
+  Itm(price: 13.00, imagePath: "assets\images\8.jpg"),
 ];

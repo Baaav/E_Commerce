@@ -1,3 +1,8 @@
+// ignore: duplicate_ignore
+// ignore_for_file: unused_import, duplicate_ignore
+
+import 'package:ecommerce/pages/Home.dart';
+// ignore: unused_import
 import 'package:ecommerce/pages/login.dart';
 import 'package:ecommerce/pages/register.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Register(),
+      home: Home(),
     );
   }
 }

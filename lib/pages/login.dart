@@ -43,10 +43,12 @@ class login extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {},
+                  // ignore: sort_child_properties_last
                   child: Text(
                     "sign in",
                     style: TextStyle(fontSize: 19),
                   ),
+
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(BtnGreen),
                       padding: MaterialStateProperty.all(EdgeInsets.all(12)),

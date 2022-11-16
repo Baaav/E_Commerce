@@ -1,16 +1,20 @@
+// ignore_for_file: prefer_const_constructors, duplicate_ignore
+
 import 'package:ecommerce/pages/items.dart';
 import 'package:ecommerce/shared/colors.dart';
 import 'package:flutter/material.dart';
 
-class Details extends StatefulWidget {
-  Item product;
-  Details({required this.product});
+// ignore: must_be_immutable
+class Detail extends StatefulWidget {
+  Itm product;
+  // ignore: use_key_in_widget_constructors
+  Detail({required this.product});
 
   @override
-  State<Details> createState() => _DetailsState();
+  State<Detail> createState() => _DetailState();
 }
 
-class _DetailsState extends State<Details> {
+class _DetailState extends State<Detail> {
   // const Details({Key? key}) : super(key: key);
   bool isShowMore = true;
 
@@ -26,8 +30,12 @@ class _DetailsState extends State<Details> {
                     Positioned(
                       bottom: 24,
                       child: Container(
+                          // ignore: prefer_const_constructors
+                          // ignore: sort_child_properties_last
+                          // ignore: prefer_const_constructors, sort_child_properties_last
                           child: Text(
                             "8",
+                            // ignore: prefer_const_constructors
                             style: TextStyle(
                                 fontSize: 16,
                                 color: Color.fromARGB(255, 0, 0, 0)),
@@ -54,12 +62,12 @@ class _DetailsState extends State<Details> {
             ),
           ],
           backgroundColor: appbarGreen,
-          title: Text("Details screen"),
+          title: Text("Detail"),
         ),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Image.asset(widget.product.imgPath),
+              Image.asset(widget.product.imagePath),
               SizedBox(
                 height: 11,
               ),
@@ -75,6 +83,7 @@ class _DetailsState extends State<Details> {
                 children: [
                   Container(
                       padding: EdgeInsets.all(4),
+                      // ignore: sort_child_properties_last
                       child: Text(
                         "New",
                         style: TextStyle(fontSize: 15),
@@ -87,6 +96,7 @@ class _DetailsState extends State<Details> {
                     width: 8,
                   ),
                   Row(
+                    // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       Icon(
                         Icons.star,
@@ -131,7 +141,7 @@ class _DetailsState extends State<Details> {
                         width: 3,
                       ),
                       Text(
-                        widget.product.imgPath,
+                        widget.product.locate,
                         style: TextStyle(fontSize: 19),
                       ),
                     ],
@@ -144,7 +154,7 @@ class _DetailsState extends State<Details> {
               SizedBox(
                 width: double.infinity,
                 child: Text(
-                  "Details : ",
+                  "Detail : ",
                   style: TextStyle(fontSize: 22),
                   textAlign: TextAlign.start,
                 ),
