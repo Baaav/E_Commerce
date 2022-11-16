@@ -17,6 +17,25 @@ class login extends StatelessWidget {
                 height: 64,
               ),
               TextField(
+                keyboardType: TextInputType.emailAddress,
+                obscureText: false,
+                decoration: InputDecoration(
+                  hintText: "Enter Your Email : ",
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: Divider.createBorderSide(context),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  //fillColor: Colors.red ,
+                  filled: true,
+                  contentPadding: const EdgeInsets.all(8),
+                ),
+              ),
+              const SizedBox(
+                height: 33,
+              ),
+              TextField(
                 keyboardType: TextInputType.text,
                 obscureText: true,
                 decoration: InputDecoration(
@@ -27,6 +46,7 @@ class login extends StatelessWidget {
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey),
                   ),
+                  //fillColor: Colors.red ,
                   filled: true,
                   contentPadding: const EdgeInsets.all(8),
                 ),
