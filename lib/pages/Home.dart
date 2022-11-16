@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
                   UserAccountsDrawerHeader(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets/img/test.jpg"),
+                          image: AssetImage("assets\images\test.jpg"),
                           fit: BoxFit.cover),
                     ),
                     accountName: Text("ali Hassan",
