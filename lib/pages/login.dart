@@ -5,6 +5,7 @@ import 'package:ecommerce/shared/colors.dart';
 import 'package:ecommerce/shared/constant.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class login extends StatelessWidget {
   const login({super.key});
 
