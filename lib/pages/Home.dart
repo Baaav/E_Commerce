@@ -1,5 +1,7 @@
+import 'package:ecommerce/pages/items.dart';
 import 'package:ecommerce/shared/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce/pages/detail';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -7,59 +9,54 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 3 / 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 33),
-            itemCount: 4,
-            itemBuilder: (BuildContext context, int index) {
-              return GridTile(
-                child: GestureDetector(
-                    onTap: () {},
-                    child: GridTile(
-                        footer: GridTileBar(
+        body: Padding(
+          padding: const EdgeInsets.only(top: 22),
+          child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 3 / 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 33),
+              itemCount: items.length,
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Details(product: items[index]),
+                      ),
+                    );
+                  },
+                  child: GridTile(
+                    child: Stack(children: [
+                      Positioned(
+                        top: -3,
+                        bottom: -9,
+                        right: 0,
+                        left: 0,
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(55),
+                            child: Image.asset(items[index].imgPath)),
+                      ),
+                    ]),
+                    footer: GridTileBar(
 // backgroundColor: Color.fromARGB(66, 73, 127, 110),
-                          trailing: IconButton(
-                              color: Color.fromARGB(255, 62, 94, 70),
-                              onPressed: () {},
-                              icon: Icon(Icons.add)),
+                      trailing: IconButton(
+                          color: Color.fromARGB(255, 62, 94, 70),
+                          onPressed: () {},
+                          icon: Icon(Icons.add)),
 
-                          leading: Text("\$12.99"),
+                      leading: Text("\$12.99"),
 
-                          title: Text(
-                            "",
-                          ),
-                        ),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                                top: -3,
-                                bottom: -9,
-                                right: 0,
-                                left: 0,
-                                child: Image.asset("assets\images\1.jpg"))
-                          ],
-                        ))
-// use ClipRRect & Positioned
-
+                      title: Text(
+                        "",
+                      ),
                     ),
-                footer: GridTileBar(
-// backgroundColor: Color.fromARGB(66, 73, 127, 110),
-                  trailing: IconButton(
-                      color: Color.fromARGB(255, 62, 94, 70),
-                      onPressed: () {},
-                      icon: Icon(Icons.add)),
-
-                  leading: Text("\$12.99"),
-
-                  title: Text(
-                    "",
                   ),
-                ),
-              );
-            }),
+                );
+              }),
+        ),
         drawer: Drawer(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,18 +66,17 @@ class Home extends StatelessWidget {
                   UserAccountsDrawerHeader(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets\images\test.jpg"),
+                          image: AssetImage("assets/img/test.jpg"),
                           fit: BoxFit.cover),
                     ),
+                    currentAccountPicture: CircleAvatar(
+                        radius: 55,
+                        backgroundImage: AssetImage("assets/img/ali.jpg")),
+                    accountEmail: Text("ali@yahoo.com"),
                     accountName: Text("ali Hassan",
                         style: TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
                         )),
-                    accountEmail: Text("ali@yahoo.com"),
-                    currentAccountPictureSize: Size.square(99),
-                    currentAccountPicture: CircleAvatar(
-                        radius: 55,
-                        backgroundImage: AssetImage("assets/img/ali.jpg")),
                   ),
                   ListTile(
                       title: Text("Home"),
@@ -109,8 +105,6 @@ class Home extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 76, 141, 95),
-          title: Text("Home"),
           actions: [
             Row(
               children: [
@@ -121,21 +115,21 @@ class Home extends StatelessWidget {
                       child: Container(
                           child: Text(
                             "8",
-                            style: const TextStyle(
+                            style: TextStyle(
+                                fontSize: 16,
                                 color: Color.fromARGB(255, 0, 0, 0)),
                           ),
                           padding: EdgeInsets.all(5),
-                          // ignore: prefer_const_constructors
                           decoration: BoxDecoration(
-                              color: const Color.fromARGB(211, 164, 255, 193),
+                              color: Color.fromARGB(211, 164, 255, 193),
                               shape: BoxShape.circle)),
                     ),
                     IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.add_shopping_cart)),
+                      onPressed: () {},
+                      icon: Icon(Icons.add_shopping_cart),
+                    ),
                   ],
                 ),
-                // ignore: prefer_const_constructors
                 Padding(
                   padding: const EdgeInsets.only(right: 12),
                   child: Text(
@@ -146,6 +140,8 @@ class Home extends StatelessWidget {
               ],
             ),
           ],
+          backgroundColor: appbarGreen,
+          title: Text("Home"),
         ));
   }
 }
